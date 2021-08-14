@@ -22,7 +22,7 @@ module.exports.authRequired = (req, res, next) => {
       return res.status(status.FORBIDDEN).json({
         code: status.FORBIDDEN,
         data: "",
-        msg: "Forbidden",
+        msg: "Token is no valid",
       });
     }
     const sub = payload.sub;

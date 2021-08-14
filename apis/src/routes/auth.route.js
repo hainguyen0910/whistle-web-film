@@ -7,6 +7,10 @@ const authValidator = require("../middleware/validators/auth.validator");
 router.post("/register", authValidator.register, authController.register);
 router.post("/login", authValidator.login, authController.login);
 router.get("/logout", authMiddleware.authRequired, authController.logout);
-// router.post("/forgot-password", authController.forgotPassword);
+// router.post(
+//   "/forgot-password",
+//   authMiddleware.authRequired,
+//   authController.forgotPassword
+// );
 
 module.exports = router;

@@ -1,7 +1,10 @@
 const mongoose = require("mongoose");
 const mongooseDelete = require("mongoose-delete");
 const slug = require("mongoose-slug-updater");
+const dotenv = require("dotenv");
+const CryptoJS = require("crypto-js");
 
+dotenv.config();
 const Scheme = mongoose.Schema;
 
 const UserSchema = new Scheme(
@@ -16,7 +19,25 @@ const UserSchema = new Scheme(
     timestamps: true,
   }
 );
+UserSchema.pre("save", function (next) {
+  const user = this;
+  if (!user.isModified("password")) return next();
 
+  CryptoJS.AES.encrypt(
+    JSON.stringify(password),
+    process.env.SECRET_KEY
+  ).toString();
+  next();
+});
+
+UserSchema.methods.comparePassword = function (password) {
+  const originalPassword = JSON.parse(
+    CryptoJS.AES.decrypt(this.password, process.env.SECRET_KEY).toString(
+      CryptoJS.enc.Utf8
+    )
+  );
+  return password === originalPassword;
+};
 mongoose.plugin(slug);
 UserSchema.plugin(mongooseDelete, {
   deletedAt: true,
