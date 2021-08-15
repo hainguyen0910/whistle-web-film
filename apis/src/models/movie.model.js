@@ -14,7 +14,7 @@ const MovieSchema = new Schema(
     imgSm: { type: String },
     trailer: { type: String },
     video: { type: String },
-    year: { type: String },
+    year: { type: Number },
     limit: { type: Number },
     genre: [{ type: ObjectId, ref: "Genre" }],
     isSeries: { type: Boolean, default: false },
