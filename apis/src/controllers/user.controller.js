@@ -9,14 +9,6 @@ dotenv.config();
 class UserController {
   //[GET] /users - GET ALL USER
   getAll = async (req, res) => {
-    const { isAdmin } = req.user.isAdmin;
-    if (!isAdmin) {
-      return res.status(status.FORBIDDEN).json({
-        code: status.FORBIDDEN,
-        data: "",
-        msg: "Permission denied!!!",
-      });
-    }
     const users = await User.find();
     return res.status(status.OK).json({
       code: status.OK,
@@ -87,15 +79,7 @@ class UserController {
 
   //[DELETE] /users/:id - SOFT DELETE USER
   delete = async (req, res) => {
-    const { id: idAdmin, isAdmin } = req.user;
-    if (!isAdmin) {
-      return res.status(status.FORBIDDEN).json({
-        code: status.FORBIDDEN,
-        data: "",
-        msg: "Permission denied!!!",
-      });
-    }
-
+    const { id: idAdmin } = req.user;
     const { id } = req.params;
     if (id === idAdmin) {
       return res.status(status.BAD_REQUEST).json({
@@ -123,14 +107,6 @@ class UserController {
   //[DELETE] /user/:id/delete - FORCE DELETE USER
   forceDelete = async (req, res) => {
     const { id: idAdmin, isAdmin } = req.user;
-    if (!isAdmin) {
-      return res.status(status.FORBIDDEN).json({
-        code: status.FORBIDDEN,
-        data: "",
-        msg: "Permission denied!!!",
-      });
-    }
-
     const { id } = req.params;
     if (id === idAdmin) {
       return res.status(status.BAD_REQUEST).json({

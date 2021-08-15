@@ -13,10 +13,10 @@ router.put(
 router.get("/:id", authMiddleware.authRequired, userController.getById);
 router.delete(
   "/:id/delete",
-  authMiddleware.authRequired,
+  authMiddleware.adminRequired,
   userController.forceDelete
 );
-router.delete("/:id", authMiddleware.authRequired, userController.delete);
-router.get("/", authMiddleware.authRequired, userController.getAll);
+router.delete("/:id", authMiddleware.adminRequired, userController.delete);
+router.get("/", authMiddleware.adminRequired, userController.getAll);
 
 module.exports = router;
