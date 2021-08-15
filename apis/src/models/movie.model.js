@@ -3,6 +3,7 @@ const mongooseDelete = require("mongoose-delete");
 const slug = require("mongoose-slug-updater");
 
 const Schema = mongoose.Schema;
+const ObjectId = Schema.Types.ObjectId;
 
 const MovieSchema = new Schema(
   {
@@ -15,9 +16,10 @@ const MovieSchema = new Schema(
     video: { type: String },
     year: { type: String },
     limit: { type: Number },
-    genre: { type: String },
+    genre: [{ type: ObjectId, ref: "Genre" }],
     isSeries: { type: Boolean, default: false },
     slug: { type: String, slug: "title" },
+    views: { type: Number, default: 0 },
   },
   { timestamps: true }
 );

@@ -1,5 +1,6 @@
 const authRoute = require("./auth.route");
 const userRoute = require("./user.route");
+const genreRoute = require("./genre.route");
 
 function routes(app) {
   app.get("/", (req, res) => {
@@ -7,6 +8,7 @@ function routes(app) {
   });
   app.use("/api/auth", authRoute);
   app.use("/api/users", userRoute);
+  app.use("/api/genres", genreRoute);
 }
 
 module.exports = routes;
