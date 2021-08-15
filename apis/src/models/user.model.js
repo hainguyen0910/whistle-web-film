@@ -22,20 +22,21 @@ const UserSchema = new Scheme(
 UserSchema.pre("save", function (next) {
   const user = this;
   if (!user.isModified("password")) return next();
-
-  CryptoJS.AES.encrypt(
-    JSON.stringify(password),
+  user.password = CryptoJS.AES.encrypt(
+    JSON.stringify(user.password),
     process.env.SECRET_KEY
   ).toString();
   next();
 });
 
 UserSchema.methods.comparePassword = function (password) {
+  user = this;
   const originalPassword = JSON.parse(
     CryptoJS.AES.decrypt(this.password, process.env.SECRET_KEY).toString(
       CryptoJS.enc.Utf8
     )
   );
+
   return password === originalPassword;
 };
 mongoose.plugin(slug);
