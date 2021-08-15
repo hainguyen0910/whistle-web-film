@@ -3,7 +3,7 @@ const status = require("http-status");
 const jwt = require("../services/jwt");
 
 class AuthController {
-  //[POST] - REGISTER
+  //[POST] /auth/register - REGISTER
   register = async (req, res) => {
     const { username, email, password } = req.body;
 
@@ -47,7 +47,7 @@ class AuthController {
     }
   };
 
-  //[POST] - LOGIN
+  //[POST] /auth/login - LOGIN
   login = async (req, res, next) => {
     const { username, password } = req.body;
     const user = await User.findOne({ username });
@@ -96,7 +96,7 @@ class AuthController {
     });
   };
 
-  //[GET] logout
+  //[GET] /auth/logout - LOGOUT
   logout = (req, res) => {
     return res.status(status.OK).json({
       code: status.OK,
