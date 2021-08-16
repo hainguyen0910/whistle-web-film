@@ -16,7 +16,7 @@ router.put(
   movieValidator.update,
   movieController.update
 );
-router.get("/:id", authMiddleware.adminRequired, movieController.getById);
+router.get("/:id", movieController.getById);
 router.get("/", authMiddleware.adminRequired, movieController.getAll);
 router.post(
   "/",
