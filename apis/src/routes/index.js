@@ -2,6 +2,7 @@ const authRoute = require("./auth.route");
 const userRoute = require("./user.route");
 const genreRoute = require("./genre.route");
 const movieRoute = require("./movie.route");
+const listMovieRoute = require("./list_movie.route");
 
 function routes(app) {
   app.get("/", (req, res) => {
@@ -11,6 +12,7 @@ function routes(app) {
   app.use("/api/users", userRoute);
   app.use("/api/genres", genreRoute);
   app.use("/api/movies", movieRoute);
+  app.use("/api/list-movie", listMovieRoute);
 }
 
 module.exports = routes;
