@@ -1,11 +1,18 @@
 import Landing from 'pages/Landing';
+import SignUp from 'pages/SignUp';
 
 export const ROUTERS = [
   {
     name: 'Landing',
     path: '/',
-    exact: false,
+    exact: true,
     component: Landing,
+  },
+  {
+    name: 'SignUp',
+    path: '/sign-up',
+    exact: false,
+    component: SignUp,
   },
   {
     name: 'Home',
