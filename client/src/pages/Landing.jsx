@@ -42,7 +42,7 @@ const Landing = () => {
       >
         <Image src={Logo} boxSize="7em" />
         <Button colorScheme="teal" onClick={onOpen}>
-          Login
+          Sign In
         </Button>
       </Flex>
       <Box>
@@ -244,7 +244,7 @@ const Landing = () => {
         <Footer />
       </Box>
       <CustomModal
-        title="Login"
+        title="Sign In"
         isOpen={isOpen}
         onClose={onClose}
         // onClick={() => alert(123)}
