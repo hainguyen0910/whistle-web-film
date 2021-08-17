@@ -7,6 +7,7 @@ import React from 'react';
 import { Provider } from 'react-redux';
 import { Route, Switch } from 'react-router-dom';
 import './App.css';
+import 'react-credit-cards/es/styles-compiled.css';
 
 function App() {
   return (
