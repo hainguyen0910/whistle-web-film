@@ -1,3 +1,4 @@
+import React from 'react';
 import {
   Accordion,
   AccordionButton,
@@ -19,14 +20,13 @@ import {
   Text,
   useDisclosure,
 } from '@chakra-ui/react';
-import App from 'assets/img/app.svg';
-import Background from 'assets/img/home_background.jpg';
-import Logo from 'assets/img/logo.svg';
-import Video from 'assets/video/video-1.m4v';
+import { MdArrowForward } from 'react-icons/md';
+import AppDownload from 'components/AppDownload';
+import Logo from 'components/Logo';
 import CustomModal from 'components/CustomModal';
 import Footer from 'components/Footer';
-import React from 'react';
-import { MdArrowForward } from 'react-icons/md';
+import Background from 'assets/img/home_background.jpg';
+import Video from 'assets/video/video-1.m4v';
 
 const Landing = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -40,7 +40,7 @@ const Landing = () => {
         zIndex="1"
         position="relative"
       >
-        <Image src={Logo} boxSize="7em" />
+        <Logo />
         <Button colorScheme="teal" onClick={onOpen}>
           Sign In
         </Button>
@@ -146,7 +146,7 @@ const Landing = () => {
             alignItems="center"
           >
             <Box w="50%">
-              <Image src={App} />
+              <AppDownload />
             </Box>
 
             <Box w="50%" h="100%" flex="0 1 auto">
@@ -168,7 +168,7 @@ const Landing = () => {
             Frequently Asked Questions
           </Heading>
           <Center mt={10}>
-            <Accordion defaultIndex={[0]} allowMultiple w="25%">
+            <Accordion allowMultiple w="25%">
               <AccordionItem>
                 <h2>
                   <AccordionButton>
