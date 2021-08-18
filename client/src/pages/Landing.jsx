@@ -35,7 +35,7 @@ const Landing = () => {
     <Box color="#fff" bg="#1a202c" overflow="hidden">
       <Flex
         justify="space-between"
-        px={5}
+        p={5}
         align="center"
         zIndex="1"
         position="relative"
