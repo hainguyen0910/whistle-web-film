@@ -1,5 +1,6 @@
 import Landing from 'pages/Landing';
 import SignUp from 'pages/SignUp';
+import Home from 'pages/Home';
 
 export const ROUTERS = [
   {
@@ -18,7 +19,7 @@ export const ROUTERS = [
     name: 'Home',
     path: '/home',
     exact: false,
-    component: Landing,
+    component: Home,
   },
   {
     name: 'List Movie',

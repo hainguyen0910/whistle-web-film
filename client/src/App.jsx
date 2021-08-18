@@ -4,10 +4,12 @@ import store, { history } from 'configs/store';
 import theme from 'configs/theme';
 import { ConnectedRouter as Router } from 'connected-react-router';
 import React from 'react';
+import 'react-credit-cards/es/styles-compiled.css';
 import { Provider } from 'react-redux';
 import { Route, Switch } from 'react-router-dom';
+import 'slick-carousel/slick/slick-theme.css';
+import 'slick-carousel/slick/slick.css';
 import './App.css';
-import 'react-credit-cards/es/styles-compiled.css';
 
 function App() {
   return (
