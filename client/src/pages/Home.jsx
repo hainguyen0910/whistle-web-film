@@ -1,20 +1,11 @@
-import React from 'react';
-import {
-  Box,
-  Divider,
-  Flex,
-  Grid,
-  Heading,
-  Image,
-  LinkOverlay,
-  Text,
-} from '@chakra-ui/react';
+import { Box, Flex, Grid, Heading, Image, Text } from '@chakra-ui/react';
+import MoneyHeistImg from 'assets/img/money_heist_img.jpg';
+import TitleMovie from 'assets/img/title-movie.png';
 import Featured from 'components/Featured';
 import Footer from 'components/Footer';
 import ImgSlider from 'components/ImgSlider';
 import Navbar from 'components/Navbar';
-import MoneyHeistImg from 'assets/img/money_heist_img.jpg';
-import TitleMovie from 'assets/img/title-movie.png';
+import React from 'react';
 
 function Home() {
   const item = {

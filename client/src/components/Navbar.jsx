@@ -11,11 +11,11 @@ import {
   InputGroup,
   InputLeftElement,
   Menu,
-  MenuList,
   MenuButton,
+  MenuItem,
+  MenuList,
   useDisclosure,
   VisuallyHidden,
-  MenuItem,
 } from '@chakra-ui/react';
 import React, { useState } from 'react';
 import {
@@ -25,10 +25,9 @@ import {
   AiOutlineSearch,
 } from 'react-icons/ai';
 import { FaUserAlt } from 'react-icons/fa';
+import { GiExitDoor } from 'react-icons/gi';
 import { MdLocalMovies, MdTrendingUp } from 'react-icons/md';
 import { RiMovie2Fill } from 'react-icons/ri';
-import { GiExitDoor } from 'react-icons/gi';
-
 import Logo from './Logo';
 
 function Navbar(props) {
