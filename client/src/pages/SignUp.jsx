@@ -327,7 +327,7 @@ function SignUp() {
     <Stack color="#1a202c" minH="100vh">
       <Flex
         justify="space-between"
-        px={5}
+        p="4"
         align="center"
         zIndex="1"
         position="relative"
